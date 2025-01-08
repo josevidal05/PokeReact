@@ -1,8 +1,17 @@
+import PokeLista from "./components/pokelista";
 import Pokemon from "./components/pokemon";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
 
 function App() {
   return (
-        <Pokemon/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/pokemon/:id" element={<Pokemon />} />
+        <Route path="/" element={<PokeLista />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
