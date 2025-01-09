@@ -24,9 +24,11 @@ const PokeLista = () => {
         <Link to="/pokemon/25">IR A PIKACHU</Link>
         <h1>Lista</h1>
         { pokemons.map(p => {
-            return <div>
-            <p onCLick={() => {navigate(`/pokemon/${p.name}`)}}>Este pokemon es {p.name} </p> 
-            </div> 
+            return <>
+            <p>Este pokemon es {p.name} </p> 
+            <div onCLick={() => {navigate("/pokemon/"+p.name)}}> Navegar</div>
+            <Link to = {"/pokemon/"+p.name}>Navegar</Link>
+            </> 
         }
         )}
     </div>
